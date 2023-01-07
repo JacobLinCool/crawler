@@ -1,4 +1,4 @@
-import type { LaunchOptions, Page } from "playwright-core";
+import type { LaunchOptions, Page, BrowserContextOptions } from "playwright-core";
 import type { RateLimiter } from "@jacoblincool/rate-limiter";
 
 export interface CrawlerOptions {
@@ -23,6 +23,8 @@ export interface CrawlerStrategy<A extends { [key: string]: CrawlerActor<unknown
 	post?: (page: Page) => void | Promise<void>;
 	/** Do something to the page when it is created. */
 	init?: (page: Page) => void | Promise<void>;
+	/** The context options to use. */
+	context?: BrowserContextOptions;
 }
 
 export type CrawlerResult<A extends { [key: string]: CrawlerActor<unknown> }> = {
