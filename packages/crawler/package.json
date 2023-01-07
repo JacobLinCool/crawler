@@ -1,7 +1,7 @@
 {
 	"name": "@jacoblincool/crawler",
-	"version": "1.0.0",
-	"description": "Jacob's Crawler.",
+	"version": "1.1.0",
+	"description": "Jacob's Crawler, the Library version.",
 	"keywords": [
 		"crawler"
 	],
