@@ -30,7 +30,13 @@ export class Crawler extends EventEmitter {
 		const browser = await this.browser;
 		const ctx = await browser.newContext();
 		const pages = await Promise.all(
-			Array.from({ length: limiter.space }).map(() => ctx.newPage()),
+			Array.from({ length: limiter.space }).map(async () => {
+				const page = await ctx.newPage();
+				if (strategy.init) {
+					await strategy.init(page);
+				}
+				return page;
+			}),
 		);
 
 		const results = {} as any;

@@ -21,6 +21,8 @@ export interface CrawlerStrategy<A extends { [key: string]: CrawlerActor<unknown
 	pre?: (page: Page) => void | Promise<void>;
 	/** Do something to the page after a task is run. */
 	post?: (page: Page) => void | Promise<void>;
+	/** Do something to the page when it is created. */
+	init?: (page: Page) => void | Promise<void>;
 }
 
 export type CrawlerResult<A extends { [key: string]: CrawlerActor<unknown> }> = {
