@@ -1,0 +1,47 @@
+{
+	"name": "@jacoblincool/crawler",
+	"version": "1.0.0",
+	"description": "Jacob's Crawler.",
+	"keywords": [
+		"crawler"
+	],
+	"author": "JacobLinCool <jacoblincool@gmail.com> (https://github.com/JacobLinCool)",
+	"license": "MIT",
+	"main": "lib/index.js",
+	"module": "lib/index.mjs",
+	"types": "lib/index.d.ts",
+	"files": [
+		"lib"
+	],
+	"scripts": {
+		"build": "tsup",
+		"build:docs": "typedoc --out docs src"
+	},
+	"dependencies": {
+		"@jacoblincool/rate-limiter": "^1.0.0",
+		"debug": "^4.3.4",
+		"eventemitter3": "^5.0.0",
+		"playwright-core": "^1.29.2",
+		"playwright-extra": "^4.3.5",
+		"puppeteer-extra-plugin-stealth": "^2.11.1"
+	},
+	"devDependencies": {
+		"@types/debug": "^4.1.7",
+		"tsup": "^6.5.0",
+		"typedoc": "^0.23.23",
+		"typescript": "^4.9.4"
+	},
+	"lint-staged": {
+		"*.{ts,js,json,yaml,yml}": [
+			"prettier --write"
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/JacobLinCool/crawler.git"
+	},
+	"bugs": {
+		"url": "https://github.com/JacobLinCool/crawler/issues"
+	},
+	"homepage": "https://jacoblincool.github.io/crawler"
+}
